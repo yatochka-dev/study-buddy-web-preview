@@ -1,9 +1,5 @@
-import Link from "next/link";
-
-import { LatestPost } from "~/app/_components/post";
-import { api, HydrateClient } from "~/trpc/server";
+import { HydrateClient } from "~/trpc/server";
 import {Spotlight} from "~/components/ui/spotlight";
-import {useTranslations, } from "next-intl";
 import {getTranslations} from "next-intl/server";
 
 export default async function Home() {
@@ -12,7 +8,6 @@ export default async function Home() {
     const cap = t("caption");
 
   return (
-    <HydrateClient>
         <div
             className="h-screen w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
             <Spotlight
@@ -32,6 +27,5 @@ export default async function Home() {
                 </p>
             </div>
         </div>
-    </HydrateClient>
   );
 }
